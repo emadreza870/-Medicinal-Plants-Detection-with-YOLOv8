@@ -1,0 +1,3 @@
+To download the training notebook from colab, visit the link below:
+
+https://colab.research.google.com/drive/122y6z-kapt_hLk9LogZEwmae1w71Vrd_?usp=sharing
