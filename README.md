@@ -106,7 +106,7 @@ The model was trained on a custom dataset and evaluated using standard object de
 ### 🖼️ Training Process Samples
 
 * **Training Batches:** A glimpse into the data fed to the model during training.  
-    ` ![Training Process Samples](https://github.com/emadreza870/-Medicinal-Plants-Detection-with-YOLOv8/blob/main/Trained%20model/yolov8n-medicinal-plants/train_batch0.jpg) `, `![Training Process Samples](Trained model/train_batch1.jpg)`, `![Training Process Samples](Trained model/train_batch2.jpg)`
+     ![Training Process Samples](https://github.com/emadreza870/-Medicinal-Plants-Detection-with-YOLOv8/blob/main/Trained%20model/yolov8n-medicinal-plants/train_batch0.jpg), `![Training Process Samples](Trained model/train_batch1.jpg)`, `![Training Process Samples](Trained model/train_batch2.jpg)`
 
 * **Dataset Labels:** An example of how the ground truth labels are structured.  
     `labels.jpg`
