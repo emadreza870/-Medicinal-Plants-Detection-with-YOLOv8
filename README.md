@@ -1,136 +1,184 @@
-
----
-
-## 📄 نسخه جامع README.md
-
-````markdown
 # 🌿 Medicinal Plants Detection with YOLOv8
 
-## 📌 معرفی پروژه
-گیاهان دارویی از گذشته تا امروز بخش مهمی از درمان‌های طبیعی و طب سنتی را تشکیل داده‌اند.  
-اما تشخیص دقیق گونه‌های مختلف گیاهان دارویی توسط افراد غیرمتخصص بسیار دشوار است و حتی متخصصان هم گاهی نیاز به ابزارهای کمکی دارند.  
-
-این پروژه با استفاده از **مدل YOLOv8** یک سیستم هوشمند برای **تشخیص و شناسایی گیاهان دارویی** توسعه داده است.  
-مدل بر روی دیتاست اختصاصی آموزش داده شده و قادر است با دقت بالا گیاهان مشخص‌شده در دیتاست را شناسایی کند.  
+A deep learning project for accurately identifying medicinal plants using the YOLOv8 object detection model. This tool aims to bridge the gap between traditional botanical knowledge and modern technology.
 
 ---
 
-## 🎯 اهداف پروژه
-- ساخت یک **سیستم بینایی ماشین** برای شناسایی گیاهان دارویی  
-- کاهش خطای انسانی در تشخیص گیاهان  
-- پایه‌گذاری برای ساخت یک **وب اپلیکیشن** یا **اپلیکیشن اندرویدی** در آینده  
-- توسعه مداوم دیتاست و اضافه کردن گیاهان بیشتر  
+## 📌 Table of Contents
+- [Project Overview](#-project-overview)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Installation and Setup](#-installation-and-setup)
+- [Usage](#-usage)
+- [Model Performance](#-model-performance)
+- [Project Roadmap](#-project-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
-## ⚙️ نصب و راه‌اندازی
-### 1️⃣ نصب پیش‌نیازها
+## 📖 Project Overview
+
+For centuries, medicinal plants have been a cornerstone of natural remedies and traditional medicine. However, accurately identifying different species can be challenging for non-experts, and even botanists can benefit from technological assistance.
+
+This project introduces an intelligent system powered by **YOLOv8** to **detect and classify medicinal plants**. The model is trained on a custom dataset and is capable of identifying the specified plant species with high precision. This serves as a foundational step towards building accessible tools for researchers, enthusiasts, and practitioners in the field of herbal medicine.
+
+---
+
+## 🎯 Key Features
+
+- **High-Accuracy Detection:** Leverages the state-of-the-art YOLOv8 model for fast and precise plant identification.
+- **Custom-Trained Model:** Trained on a dedicated dataset of medicinal plants to ensure specialized performance.
+- **Reduces Human Error:** Provides a reliable second opinion to minimize misidentification of plants.
+- **Scalable Foundation:** Designed as a base for future development, including a **web or mobile application**.
+- **Continuously Improving:** The dataset is actively being expanded to include more plant species.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python**
+- **PyTorch**
+- **Ultralytics YOLOv8**
+- **OpenCV**
+- **NumPy**
+- **Matplotlib**
+
+---
+
+## ⚙️ Installation and Setup
+
+Follow these steps to get the project up and running on your local machine.
+
+### 1️⃣ Clone the Repository
+```bash
+git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+cd your-repo-name
+```
+
+### 2️⃣ Create a Virtual Environment (Recommended)
+It's best practice to create a virtual environment to manage dependencies.
+```bash
+# For Windows
+python -m venv venv
+venv\Scripts\activate
+
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3️⃣ Install Dependencies
+Install all the required libraries from the `requirements.txt` file.
 ```bash
 pip install -r requirements.txt
-````
+```
 
-### 2️⃣ اجرای مدل آموزش‌دیده
+---
 
-پس از نصب کتابخانه‌ها، می‌توانید مدل را اجرا کنید:
+## 🚀 Usage
 
+Once the installation is complete, you can run the pre-trained model to perform inference.
+
+### Run the Model on Test Images
+Execute the following command to run the detection script. This will load the trained weights and process the test images.
 ```bash
 python "Trained model/yolov8n-medicinal-plants/Model implementation.py"
 ```
-
-این فایل وزن‌های آموزش‌دیده را بارگذاری کرده و روی تصاویر تست، پیش‌بینی انجام می‌دهد.
-
----
-
-## 📊 نتایج مدل
-
-مدل بر اساس دیتاست سفارشی آموزش داده شد و عملکرد آن با استفاده از معیارهای مرسوم در بینایی ماشین ارزیابی شد.
-
-### 🔹 متریک‌های اصلی
-
-* **mAP50:** \~X.XX
-* **Precision:** \~X.XX
-* **Recall:** \~X.XX
+The script will save the output images with bounding boxes drawn around the detected medicinal plants.
 
 ---
 
-### 📸 نمونه تصاویر از فرایند آموزش
+## 📊 Model Performance
 
-* نمونه‌ای از **Batch آموزشی**:
-  `train_batch0.jpg`, `train_batch1.jpg`, `train_batch2.jpg`
+The model was trained on a custom dataset and evaluated using standard object detection metrics.
 
-* نمونه‌ای از **لیبل‌های دیتاست**:
-  `labels.jpg`
+**Note:** Please update the following metrics with your final results.
 
----
-
-### 📸 نمونه تصاویر از داده‌های اعتبارسنجی (Validation)
-
-* ورودی به همراه لیبل‌ها:
-  `val_batch0_labels.jpg`, `val_batch1_labels.jpg`, `val_batch2_labels.jpg`
-
-* پیش‌بینی مدل روی همان تصاویر:
-  `val_batch0_pred.jpg`, `val_batch1_pred.jpg`, `val_batch2_pred.jpg`
+### 🔹 Core Metrics
+* **mAP50-95:** `~X.XX`
+* **Precision:** `~X.XX`
+* **Recall:** `~X.XX`
 
 ---
 
-### 📊 نمودارها و ارزیابی عملکرد
+### 🖼️ Training Process Samples
 
-* **Confusion Matrix (ماتریس درهم‌ریختگی):**
-  `confusion_matrix.png`
+* **Training Batches:** A glimpse into the data fed to the model during training.  
+    `train_batch0.jpg`, `train_batch1.jpg`, `train_batch2.jpg`
 
-* **Normalized Confusion Matrix:**
-  `confusion_matrix_normalized.png`
-
-* **Precision-Recall Curve:**
-  `BoxPR_curve.png`
-
-* **F1 Score Curve:**
-  `BoxF1_curve.png`
-
-* **Precision Curve:**
-  `BoxP_curve.png`
-
-* **Recall Curve:**
-  `BoxR_curve.png`
-
-* **نمودار کلی نتایج آموزش:**
-  `results.png`
+* **Dataset Labels:** An example of how the ground truth labels are structured.  
+    `labels.jpg`
 
 ---
 
-## 🚀 آینده پروژه
+### 🧪 Validation Results Samples
 
-* اضافه کردن گیاهان دارویی جدید به دیتاست
-* استفاده از تکنیک‌های **Data Augmentation** برای افزایش دقت مدل
-* **بهبود معماری مدل** و آزمایش نسخه‌های سنگین‌تر YOLOv8
-* توسعه یک **وب‌اپلیکیشن یا اپلیکیشن موبایل** برای استفاده روزمره
-* فراهم کردن امکان تست زنده مدل از طریق دوربین موبایل
+* **Validation Batch with Ground Truth Labels:** `val_batch0_labels.jpg`, `val_batch1_labels.jpg`, `val_batch2_labels.jpg`
+
+* **Validation Batch with Model Predictions:** `val_batch0_pred.jpg`, `val_batch1_pred.jpg`, `val_batch2_pred.jpg`
 
 ---
 
-## 🤝 همکاری
+### 📈 Performance Evaluation Charts
 
-این پروژه هنوز در حال توسعه است و من به دنبال همکارانی علاقه‌مند در حوزه‌های زیر هستم:
+* **Confusion Matrix:** Visualizes the classification performance of the model.  
+    `confusion_matrix.png`  
+    `confusion_matrix_normalized.png`
 
-* یادگیری عمیق و بینایی ماشین
-* توسعه اپلیکیشن‌های وب و موبایل
-* طراحی دیتاست و برچسب‌گذاری
+* **Precision-Recall Curve:** Shows the trade-off between precision and recall for different thresholds.  
+    `BoxPR_curve.png`
 
-اگر علاقه‌مند هستید، لطفاً با من تماس بگیرید:
-📩 Telegram & سایر پیام‌رسان‌ها: **[@EmadReza870](https://t.me/EmadReza870)**
+* **Key Metric Curves:** - F1 Score Curve: `BoxF1_curve.png`
+    - Precision Curve: `BoxP_curve.png`
+    - Recall Curve: `BoxR_curve.png`
+
+* **Overall Training Results:** A summary of all metrics across training epochs.  
+    `results.png`
 
 ---
 
-## 📜 لایسنس
+## 🚀 Project Roadmap
 
-این پروژه تحت **Business Source License 1.1 (BUSL-1.1)** منتشر شده است.
+This project is in active development. Future plans include:
+- [ ] **Expand Dataset:** Add new species of medicinal plants to the dataset.
+- [ ] **Advanced Data Augmentation:** Implement more sophisticated augmentation techniques to improve model robustness.
+- [ ] **Model Enhancement:** Experiment with larger YOLOv8 architectures (e.g., YOLOv8m, YOLOv8l) for better accuracy.
+- [ ] **Web/Mobile Application:** Develop a user-friendly web or mobile app for real-world use.
+- [ ] **Live Camera Detection:** Integrate real-time detection using a device's camera.
 
-🔒 شرایط استفاده:
+---
 
-* تنها برای **آموزشی، تحقیقاتی و تست** مجاز است.
-* هرگونه استفاده **شخصی یا تجاری** بدون هماهنگی با توسعه‌دهنده ممنوع است.
-* استفاده در محصولات نهایی یا اپلیکیشن‌ها نیاز به مجوز رسمی دارد.
+## 🤝 Contributing
 
-متن کامل لایسنس در فایل `LICENSE` موجود است.
+Contributions are welcome! This is an open-source project, and I am looking for collaborators passionate about:
+
+* Deep Learning and Computer Vision
+* Web and Mobile App Development
+* Dataset Curation and Annotation
+
+If you are interested in contributing, please feel free to open an issue, submit a pull request, or contact me directly.
+
+---
+
+## 📜 License
+
+This project is licensed under the **Business Source License 1.1 (BUSL-1.1)**.
+
+🔒 **Terms of Use:**
+* You are free to use this project for **educational, research, and testing purposes**.
+* Any **commercial or personal production use** is strictly prohibited without prior written permission from the developer.
+* Integrating this project into a final product or application requires a formal license.
+
+The full license text is available in the `LICENSE` file.
+
+---
+
+## 📩 Contact
+
+Feel free to reach out if you have any questions, suggestions, or collaboration inquiries.
+
+**Emad Reza** 💬 Telegram & Other Messengers: **[@EmadReza870](https://t.me/EmadReza870)**
 
 ---
