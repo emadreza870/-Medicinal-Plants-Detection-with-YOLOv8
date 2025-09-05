@@ -76,11 +76,9 @@ Outputs (images and charts) will be saved into `Trained model/yolov8n-medicinal-
 ## 📊 Model Performance
 
 ### 🔹 Core Metrics
-* **mAP50-95:** `~X.XX`  
-* **Precision:** `~X.XX`  
-* **Recall:** `~X.XX`  
-
-> Replace these placeholders with final numbers from `results.png` / YOLOv8 log.
+* **mAP50-95:** `0.46`  
+* **Precision:** `0.63`  
+* **Recall:** `0.65`  
 
 ---
 
@@ -94,8 +92,6 @@ Below images are arranged in rows (3 per row). You can adjust the `width` percen
   <img src="https://github.com/emadreza870/Medicinal-Plants-Detection-with-YOLOv8/blob/main/Trained%20model/yolov8n-medicinal-plants/train_batch1.jpg" width="32%" alt="train_batch1">
   <img src="https://github.com/emadreza870/Medicinal-Plants-Detection-with-YOLOv8/blob/main/Trained%20model/yolov8n-medicinal-plants/train_batch2.jpg" width="32%" alt="train_batch2">
 </p>
-
-*Caption: Training images shown during batch sampling.*
 
 ### Validation - Ground Truths
 <p align="center">
